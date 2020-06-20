@@ -123,5 +123,34 @@ public class MethodCollection {
 		
 		return first;
 	}
+
+	/**
+	 * @param First node of a singly linked list
+	 * @return First node of a new re-arranged singly linked list
+	 */
+	public Node FindMaxElementAndInsertItAsFirst(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first.next;
+		Node max = first;
+		
+		while(help!=null) {
+			if(max.number<help.number) max=help;
+			help=help.next;
+		}
+		
+		if(max==first) return first;
+		
+		help = first;
+		while(help.next!=max) help=help.next;
+		
+		help.next=help.next.next;
+		
+		max.next = first;
+		first = max;
+		
+		return first;
+	}
 	
 }

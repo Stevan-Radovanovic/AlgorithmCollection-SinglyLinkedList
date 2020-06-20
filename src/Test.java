@@ -9,6 +9,6 @@ public class Test {
 		Node first = Helper.generateSinglyLinkedList(new int[] {1,-1,2,3,4});
 		//Testing
 		mc.showAllElements(first);
-		mc.showAllElements(mc.FindMinElementAndInsertItAsFirst(first));
+		mc.showAllElements(mc.FindMaxElementAndInsertItAsFirst(first));
 	}
 }
