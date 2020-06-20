@@ -95,4 +95,33 @@ public class MethodCollection {
 		return min;		
 	}
 	
+	/**
+	 * @param First node of a singly linked list
+	 * @return First node of a new re-arranged singly linked list
+	 */
+	public Node FindMinElementAndInsertItAsFirst(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first.next;
+		Node min = first;
+		
+		while(help!=null) {
+			if(min.number>help.number) min=help;
+			help=help.next;
+		}
+		
+		if(min==first) return first;
+		
+		help = first;
+		while(help.next!=min) help=help.next;
+		
+		help.next=help.next.next;
+		
+		min.next = first;
+		first = min;
+		
+		return first;
+	}
+	
 }
