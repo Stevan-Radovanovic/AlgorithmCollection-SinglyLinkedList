@@ -80,9 +80,9 @@ public class MethodCollection {
 		//Generate a class
 		MethodCollection mc = new MethodCollection();		
 		//Creating a list
-		Node first = new Node(1,new Node(2, new Node(3, new Node(4, new Node(5,null)))));
+		Node first = Helper.generateSinglyLinkedList(new int[] {});
 		//Testing
-		System.out.println(mc.returnMaxElement(first));
+		mc.showAllElements(first);
 	}
 
 }
