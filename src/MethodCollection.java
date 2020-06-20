@@ -57,13 +57,32 @@ public class MethodCollection {
 		return product;		
 	}
 	
+	/**
+	 * @param First node of a singly linked list
+	 * @return Max element
+	 */
+	public int returnMaxElement(Node first) {
+	
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first.next;
+		int max = first.number;
+		
+		while(help!=null) {
+			if(max<help.number) max=help.number;
+			help=help.next;
+		}
+		
+		return max;		
+	}
+	
  	public static void main(String[] args) {
 		//Generate a class
 		MethodCollection mc = new MethodCollection();		
 		//Creating a list
 		Node first = new Node(1,new Node(2, new Node(3, new Node(4, new Node(5,null)))));
 		//Testing
-		System.out.println(mc.returnProductOfAllElements(first));
+		System.out.println(mc.returnMaxElement(first));
 	}
 
 }
