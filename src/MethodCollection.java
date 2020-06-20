@@ -76,6 +76,25 @@ public class MethodCollection {
 		return max;		
 	}
 	
+	/**
+	 * @param First node of a singly linked list
+	 * @return Min element
+	 */
+	public int returnMinElement(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first.next;
+		int min = first.number;
+		
+		while(help!=null) {
+			if(min>help.number) min=help.number;
+			help=help.next;
+		}
+		
+		return min;		
+	}
+	
  	public static void main(String[] args) {
 		//Generate a class
 		MethodCollection mc = new MethodCollection();		
