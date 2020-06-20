@@ -1,6 +1,10 @@
 
 public class MethodCollection {
 
+	/**
+	 * @param First node of a singly linked list
+	 * @return Sum of all elements
+	 */
 	public int returnSumOfAllElements(Node first) {
 		
 		if(first==null) throw new RuntimeException("The list is empty");
@@ -16,6 +20,24 @@ public class MethodCollection {
 		return sum;
 	}
 	
+	/**
+	 * @param First node of a singly linked list
+	 * Printing all elements of a singly linked list
+	 */
+	public void showAllElements(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first;
+		
+		while(help!=null) {
+			System.out.print("["+help.number+"]->");
+			help=help.next;
+		}
+		
+		System.out.println("null");
+	}
+	
 	public static void main(String[] args) {
 
 		//Generate a class
@@ -25,7 +47,7 @@ public class MethodCollection {
 		Node first = new Node(1,new Node(2, new Node(3, new Node(4, new Node(5,null)))));
 		
 		//Testing
-		System.out.println(mc.returnSumOfAllElements(first));
+		mc.showAllElements(first);
 		
 	}
 
