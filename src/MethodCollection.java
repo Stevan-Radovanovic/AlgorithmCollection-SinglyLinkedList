@@ -153,4 +153,26 @@ public class MethodCollection {
 		return first;
 	}
 	
+	/**
+	 * @param First node of a singly linked list
+	 * @return First node of a new re-arranged singly linked list
+	 */
+	public Node RemoveSecondToLastNode(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		if(first.next==null) throw new RuntimeException("The list has only one element");
+		
+		Node help = first;
+		
+		if(first.next.next==null) {
+			first=first.next;
+			return first;
+		}
+		
+		while(help.next.next.next!=null) help=help.next;
+		
+		help.next= help.next.next;
+		return first;
+	}
+	
 }
