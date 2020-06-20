@@ -38,17 +38,32 @@ public class MethodCollection {
 		System.out.println("null");
 	}
 	
-	public static void main(String[] args) {
-
-		//Generate a class
-		MethodCollection mc = new MethodCollection();
+	/**
+	 * @param First node of a singly linked list
+	 * @return Product of all elements
+	 */
+	public int returnProductOfAllElements(Node first) {
 		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first;
+		int product = 1;
+		
+		while(help!=null) {
+			product*=help.number;
+			help=help.next;
+		}
+		
+		return product;		
+	}
+	
+ 	public static void main(String[] args) {
+		//Generate a class
+		MethodCollection mc = new MethodCollection();		
 		//Creating a list
 		Node first = new Node(1,new Node(2, new Node(3, new Node(4, new Node(5,null)))));
-		
 		//Testing
-		mc.showAllElements(first);
-		
+		System.out.println(mc.returnProductOfAllElements(first));
 	}
 
 }
