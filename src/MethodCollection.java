@@ -331,6 +331,28 @@ public class MethodCollection {
 		return first;
 	}
 	
+	/**
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
+	 */
+	public Node putAllNegativeNodesAtTheBeginning(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		if(first.next==null) return first;
+		
+		Node help = first;
+		while(help.next!=null) {
+			if(help.next.number<0) {
+				first = new Node(help.next.number,first);
+				help.next=help.next.next;
+			} else
+				help=help.next;
+		}
+		
+		return first;
+	}
 	
 
 }
