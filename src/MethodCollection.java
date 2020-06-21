@@ -355,4 +355,24 @@ public class MethodCollection {
 	}
 	
 
+	public Node removeAllNegativeNodes(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first;
+		
+		while(help.next!=null) {
+			if(help.next.number<0) 
+				help.next=help.next.next;
+			else 
+				help=help.next;
+		}
+		
+		if(first.number<0) first=first.next;
+		if(help.number<0) help=null;
+		
+		return first;
+		
+	}
+	
 }

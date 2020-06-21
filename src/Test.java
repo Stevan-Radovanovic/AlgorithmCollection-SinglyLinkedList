@@ -6,9 +6,9 @@ public class Test {
 		//Generate a class
 		MethodCollection mc = new MethodCollection();		
 		//Creating a list
-		Node first = Helper.generateSinglyLinkedList(new int[] {1,2,3,4,-1,-1,-1,-1,-3,5,-4,-4,-4,-4,-4});
+		Node first = Helper.generateSinglyLinkedList(new int[] {-1,1,2,-1,-2,-3,-4,3,4,-1});
 		//Testing
 		mc.showAllElements(first);
-		mc.showAllElements(mc.putAllNegativeNodesAtTheBeginning(first));
+		mc.showAllElements(mc.removeAllNegativeNodes(first));
 	}
 }
