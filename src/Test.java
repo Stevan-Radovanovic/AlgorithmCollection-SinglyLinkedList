@@ -6,9 +6,9 @@ public class Test {
 		//Generate a class
 		MethodCollection mc = new MethodCollection();		
 		//Creating a list
-		Node first = Helper.generateSinglyLinkedList(new int[] {1,2,3,1,2,3,1,2,3,1,2,3,4});
+		Node first = Helper.generateSinglyLinkedList(new int[] {11,12});
 		//Testing
 		mc.showAllElements(first);
-		mc.showAllElements(mc.removeAllDuplicateNodesEqualToX(first,4));
+		mc.showAllElements(mc.removeNextAndPreviousNodeFromMax(first));
 	}
 }

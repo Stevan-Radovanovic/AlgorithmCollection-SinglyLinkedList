@@ -450,6 +450,41 @@ public class MethodCollection {
 
 	}
 
+	public Node removeNextAndPreviousNodeFromMax(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		if(first.next==null) return first;
+		
+		Node help = first.next;
+		Node max = first;
+		
+		while(help!=null) {
+			if(max.number<help.number) max=help;
+			help=help.next;
+		}
+		
+		if(max==first) {
+			first.next=first.next.next;
+			return first;
+		}
+		
+		if(max==first.next) {
+			first=first.next;
+			if(max.next!=null) 
+				max.next = max.next.next;
+			return first;
+		}
+		
+		help = first;
+		while(help.next.next!=max) help=help.next;
+		
+		help.next = max;
+		
+		if(max.next!=null) 
+			max.next = max.next.next;
+		
+		return first;
+	}
 
 
 
