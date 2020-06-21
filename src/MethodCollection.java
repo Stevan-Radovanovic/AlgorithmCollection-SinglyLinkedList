@@ -450,6 +450,12 @@ public class MethodCollection {
 
 	}
 
+	/**
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
+	 */
 	public Node removeNextAndPreviousNodeFromMax(Node first) {
 		
 		if(first==null) throw new RuntimeException("The list is empty");
@@ -486,7 +492,29 @@ public class MethodCollection {
 		return first;
 	}
 
-
+	/**
+	 * Note: List must be sorted ascending
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
+	 */
+	public Node removeDuplicatesFromASortedList(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first;
+		
+		while(help.next!=null) {
+			if(help.number==help.next.number)
+				help.next=help.next.next;
+			else 
+				help=help.next;
+			
+		}
+		
+		return first;
+	}
 
 
 }
