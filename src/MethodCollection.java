@@ -22,6 +22,7 @@ public class MethodCollection {
 		return sum;
 	}
 	
+	
 	/**
 	 * Printing all elements of a singly linked list
 	 * @param first
@@ -40,6 +41,7 @@ public class MethodCollection {
 		
 		System.out.println("null");
 	}
+	
 	
 	/**
 	 * @param first
@@ -62,6 +64,7 @@ public class MethodCollection {
 		return product;		
 	}
 	
+	
 	/**
 	 * @param first 
 	 * First node of a singly linked list
@@ -82,6 +85,7 @@ public class MethodCollection {
 		
 		return max;		
 	}
+	
 	
 	/**
 	 * @param first 
@@ -110,7 +114,7 @@ public class MethodCollection {
 	 * @return first
 	 * First node of a new re-arranged singly linked list
 	 */
-	public Node FindMinElementAndInsertItAsFirst(Node first) {
+	public Node findMinElementAndInsertItAsFirst(Node first) {
 		
 		if(first==null) throw new RuntimeException("The list is empty");
 		
@@ -141,7 +145,7 @@ public class MethodCollection {
 	 * @return first
 	 * First node of a new re-arranged singly linked list	 
 	 */
-	public Node FindMaxElementAndInsertItAsFirst(Node first) {
+	public Node findMaxElementAndInsertItAsFirst(Node first) {
 		
 		if(first==null) throw new RuntimeException("The list is empty");
 		
@@ -172,7 +176,7 @@ public class MethodCollection {
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
 	 */
-	public Node RemoveSecondToLastNode(Node first) {
+	public Node removeSecondToLastNode(Node first) {
 		
 		if(first==null) throw new RuntimeException("The list is empty");
 		if(first.next==null) throw new RuntimeException("The list has only one element");
@@ -197,7 +201,7 @@ public class MethodCollection {
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
 	 */
-	public Node ReverseNodeOrder1(Node first) {
+	public Node reverseNodeOrder1(Node first) {
 		
 		if(first==null) throw new RuntimeException("The list is empty");
 		if(first.next==null) return first;
@@ -214,4 +218,26 @@ public class MethodCollection {
 		
 	}
 	
+	/**
+	 * @param first
+	 * First node of a singly linked list 
+	 * @return max
+	 * Max even element
+	 */
+	public int returnMaxEvenElement(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first;
+		int max = Integer.MIN_VALUE;
+		
+		while(help!=null) {
+			if(max<help.number && help.number%2==0) max=help.number;
+			help=help.next;
+		}
+		
+		if(max==Integer.MIN_VALUE) throw new RuntimeException("The list has no even numbers");
+		
+		return max;
+	}
 }
