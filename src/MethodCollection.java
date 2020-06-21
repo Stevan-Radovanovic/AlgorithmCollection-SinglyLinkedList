@@ -30,7 +30,10 @@ public class MethodCollection {
 	 */
 	public void showAllElements(Node first) {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) {
+			System.out.println("Empty list");
+			return;
+		}
 		
 		Node help = first;
 		
