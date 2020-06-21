@@ -407,4 +407,51 @@ public class MethodCollection {
 		return first;
 		
 	}
+
+	/**
+	 * Note: If there are any numbers equal to X, the first instance
+	 * of the number should be left
+	 * @param first 
+	 * First node of a singly linked list
+	 * @param x
+	 * Number that should be removed from the singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
+	 */
+	public Node removeAllDuplicateNodesEqualToX(Node first, int x) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first;
+		boolean firstInstanceFound = false;
+		
+		if(first.number==x) {
+			help=help.next;
+			firstInstanceFound = true;
+		}
+		
+		while(help.next!=null) {
+			
+			if(help.next.number==x && !firstInstanceFound) {
+				firstInstanceFound = true;
+				help=help.next;
+				continue;
+			}
+				
+			if(help.next.number==x && firstInstanceFound) 
+				help.next=help.next.next;
+			else 
+				help=help.next;
+		}
+		
+		if(help.number==x && firstInstanceFound) help=null;
+		
+		return first;
+
+	}
+
+
+
+
+
 }
