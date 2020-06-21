@@ -23,8 +23,9 @@ public class MethodCollection {
 	}
 	
 	/**
-	 * @param First node of a singly linked list
 	 * Printing all elements of a singly linked list
+	 * @param first
+	 * First node of a singly linked list 
 	 */
 	public void showAllElements(Node first) {
 		
@@ -41,8 +42,10 @@ public class MethodCollection {
 	}
 	
 	/**
-	 * @param First node of a singly linked list
-	 * @return Product of all elements
+	 * @param first
+	 * First node of a singly linked list 
+	 * @return product
+	 * Product of all elements
 	 */
 	public int returnProductOfAllElements(Node first) {
 		
@@ -60,8 +63,10 @@ public class MethodCollection {
 	}
 	
 	/**
-	 * @param First node of a singly linked list
-	 * @return Max element
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return max
+	 * Max element
 	 */
 	public int returnMaxElement(Node first) {
 	
@@ -79,8 +84,10 @@ public class MethodCollection {
 	}
 	
 	/**
-	 * @param First node of a singly linked list
-	 * @return Min element
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return min 
+	 * Min element
 	 */
 	public int returnMinElement(Node first) {
 		
@@ -98,8 +105,10 @@ public class MethodCollection {
 	}
 	
 	/**
-	 * @param First node of a singly linked list
-	 * @return First node of a new re-arranged singly linked list
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list
 	 */
 	public Node FindMinElementAndInsertItAsFirst(Node first) {
 		
@@ -127,8 +136,10 @@ public class MethodCollection {
 	}
 
 	/**
-	 * @param First node of a singly linked list
-	 * @return First node of a new re-arranged singly linked list
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	 
 	 */
 	public Node FindMaxElementAndInsertItAsFirst(Node first) {
 		
@@ -156,8 +167,10 @@ public class MethodCollection {
 	}
 	
 	/**
-	 * @param First node of a singly linked list
-	 * @return First node of a new re-arranged singly linked list
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
 	 */
 	public Node RemoveSecondToLastNode(Node first) {
 		
@@ -178,9 +191,11 @@ public class MethodCollection {
 	}
 	
 	/**
-	 * @param First node of a singly linked list
-	 * Making a new singly linked list is allowed
-	 * @return First node of a new re-arranged singly linked list
+	 * Note: Making a new singly linked list is allowed
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
 	 */
 	public Node ReverseNodeOrder1(Node first) {
 		

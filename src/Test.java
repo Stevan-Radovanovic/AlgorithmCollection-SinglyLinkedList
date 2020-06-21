@@ -9,6 +9,6 @@ public class Test {
 		Node first = Helper.generateSinglyLinkedList(new int[] {1,2,3,4,5,6,7,8});
 		//Testing
 		mc.showAllElements(first);
-		mc.showAllElements(mc.ReverseNodeOrder1(first));
+
 	}
 }
