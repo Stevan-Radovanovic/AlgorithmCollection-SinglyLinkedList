@@ -240,4 +240,27 @@ public class MethodCollection {
 		
 		return max;
 	}
+
+	/**
+	 * @param first
+	 * First node of a singly linked list 
+	 * @return max
+	 * Max odd element
+	 */
+	public int returnMaxOddElement(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first;
+		int max = Integer.MIN_VALUE;
+		
+		while(help!=null) {
+			if(max<help.number && help.number%2!=0) max=help.number;
+			help=help.next;
+		}
+		
+		if(max==Integer.MIN_VALUE) throw new RuntimeException("The list has no even numbers");
+		
+		return max;
+	}
 }
