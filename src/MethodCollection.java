@@ -263,4 +263,31 @@ public class MethodCollection {
 		
 		return max;
 	}
+
+	/**
+	 * @param first
+	 * First node of a singly linked list 
+	 * @return min
+	 * Min even element
+	 */
+	public int returnMinEvenElement(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first;
+		int min = Integer.MAX_VALUE;
+		
+		while(help!=null) {
+			if(min>help.number && help.number%2!=0) min=help.number;
+			help=help.next;
+		}
+		
+		if(min==Integer.MAX_VALUE) throw new RuntimeException("The list has no even numbers");
+		
+		return min;
+	}
+
+
+
+
 }
