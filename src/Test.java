@@ -9,6 +9,6 @@ public class Test {
 		Node first = Helper.generateSinglyLinkedList(new int[] {-1,1,2,-1,-2,-3,-4,3,4,-1});
 		//Testing
 		mc.showAllElements(first);
-		mc.showAllElements(mc.removeAllNegativeNodes(first));
+		mc.showAllElements(mc.removeAllNodesEqualToParam(first,-1));
 	}
 }

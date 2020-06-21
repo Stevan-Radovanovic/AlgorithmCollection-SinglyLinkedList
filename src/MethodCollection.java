@@ -354,7 +354,12 @@ public class MethodCollection {
 		return first;
 	}
 	
-
+	/**
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
+	 */
 	public Node removeAllNegativeNodes(Node first) {
 		
 		if(first==null) throw new RuntimeException("The list is empty");
@@ -375,4 +380,31 @@ public class MethodCollection {
 		
 	}
 	
+	/**
+	 * @param first 
+	 * First node of a singly linked list
+	 * @param x
+	 * Number that should be removed from the singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
+	 */
+	public Node removeAllNodesEqualToX(Node first, int x) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first;
+		
+		while(help.next!=null) {
+			if(help.next.number==x) 
+				help.next=help.next.next;
+			else 
+				help=help.next;
+		}
+		
+		if(first.number==x) first=first.next;
+		if(help.number==x) help=null;
+		
+		return first;
+		
+	}
 }
