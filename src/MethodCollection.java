@@ -2,8 +2,10 @@
 public class MethodCollection {
 
 	/**
-	 * @param First node of a singly linked list
-	 * @return Sum of all elements
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return sum
+	 * Sum of all elements
 	 */
 	public int returnSumOfAllElements(Node first) {
 		
@@ -173,6 +175,28 @@ public class MethodCollection {
 		
 		help.next= help.next.next;
 		return first;
+	}
+	
+	/**
+	 * @param First node of a singly linked list
+	 * Making a new singly linked list is allowed
+	 * @return First node of a new re-arranged singly linked list
+	 */
+	public Node ReverseNodeOrder1(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		if(first.next==null) return first;
+		
+		Node newFirst = null;
+		
+		Node help = first;
+		while(help!=null) {
+			newFirst = new Node(help.number,newFirst);
+			help=help.next;
+		}
+		
+		return newFirst;
+		
 	}
 	
 }
