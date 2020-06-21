@@ -310,6 +310,24 @@ public class MethodCollection {
 		return min;
 	}
 
-
+	/**
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
+	 */
+	public Node removeLastNode(Node first) {
+		if(first==null) throw new RuntimeException("The list is empty");
+		if(first.next==null) return null;
+		
+		Node help = first;
+				
+		while(help.next.next!=null) help=help.next;
+		
+		help.next= help.next.next;
+		return first;
+	}
+	
+	
 
 }
