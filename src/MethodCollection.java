@@ -516,5 +516,27 @@ public class MethodCollection {
 		return first;
 	}
 
+	public Node removeTheMiddleNode(Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");
+		
+		Node help = first;
+		int count = 0;
+		
+		while(help!=null) {
+			count++;
+			help=help.next;
+		}
+	
+		if(count%2==0)  throw new RuntimeException("The list has even amount events");
+	
+		help = first;
+		for(int i=1;i<count/2;i++) help=help.next;
+		
+		help.next=help.next.next;
+		
+		return first;
+	}
+	
 
 }
