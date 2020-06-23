@@ -566,5 +566,39 @@ public class MethodCollection {
 		
 		return first;
 	}
+	
+	/**
+	 * @param first 
+	 * First node of a singly linked list
+	 * @param x
+	 * Number of nodes that should be skipped
+	 * @param y
+	 * Number of nodes that should be removed
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
+	 */
+	public Node moveXPlacesRemoveYNodes (Node first, int x, int y) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");		
+		if(x<=0 && y<=0) throw new RuntimeException("Parameters are not in the right format");
+		
+		Node help = first;
+		
+		while(true) {
+			for(int i=1;i<x;i++) {
+				if(help==null) return first;
+				help=help.next;
+			}
+			
+			for(int i=1;i<=y;i++) {
+				if(help==null) return first;
+				if(help.next==null) return first;
+				help.next=help.next.next;				
+			}
+			
+			help=help.next;
+		}
+		
+	}
 
 }
