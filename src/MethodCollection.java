@@ -1,3 +1,4 @@
+import javax.management.RuntimeErrorException;
 
 public class MethodCollection {
 
@@ -516,6 +517,12 @@ public class MethodCollection {
 		return first;
 	}
 
+	/**
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
+	 */
 	public Node removeTheMiddleNode(Node first) {
 		
 		if(first==null) throw new RuntimeException("The list is empty");
@@ -538,5 +545,26 @@ public class MethodCollection {
 		return first;
 	}
 	
+	/**
+	 * @param first 
+	 * First node of a singly linked list
+	 * @return first
+	 * First node of a new re-arranged singly linked list	
+	 */
+	public Node removeEvenNodesWithOddNeighbours (Node first) {
+		
+		if(first==null) throw new RuntimeException("The list is empty");		
+		
+		Node help = first.next;
+		
+		while(help.next.next!=null) {
+			if(help.number%2!=0 && help.next.number%2==0 && help.next.next.number%2!=0) {
+				help.next=help.next.next;
+			} else 
+				help=help.next;
+		}
+		
+		return first;
+	}
 
 }
