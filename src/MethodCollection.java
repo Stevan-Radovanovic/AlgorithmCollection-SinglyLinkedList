@@ -5,10 +5,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return sum
 	 * Sum of all elements
+	 * @throws NodeException 
 	 */
-	public int returnSumOfAllElements(Node first) {
+	public int returnSumOfAllElements(Node first) throws NodeException {
 	
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		int sum = 0;
@@ -50,10 +51,11 @@ public class MethodCollection {
 	 * First node of a singly linked list 
 	 * @return product
 	 * Product of all elements
+	 * @throws NodeException 
 	 */
-	public int returnProductOfAllElements(Node first) {
+	public int returnProductOfAllElements(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		int product = 1;
@@ -72,10 +74,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return max
 	 * Max element
+	 * @throws NodeException 
 	 */
-	public int returnMaxElement(Node first) {
+	public int returnMaxElement(Node first) throws NodeException {
 	
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first.next;
 		int max = first.number;
@@ -94,10 +97,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return min 
 	 * Min element
+	 * @throws NodeException 
 	 */
-	public int returnMinElement(Node first) {
+	public int returnMinElement(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first.next;
 		int min = first.number;
@@ -115,10 +119,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list
+	 * @throws NodeException 
 	 */
-	public Node findMinElementAndInsertItAsFirst(Node first) {
+	public Node findMinElementAndInsertItAsFirst(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first.next;
 		Node min = first;
@@ -146,10 +151,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	 
+	 * @throws NodeException 
 	 */
-	public Node findMaxElementAndInsertItAsFirst(Node first) {
+	public Node findMaxElementAndInsertItAsFirst(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first.next;
 		Node max = first;
@@ -177,11 +183,12 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node removeSecondToLastNode(Node first) {
+	public Node removeSecondToLastNode(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
-		if(first.next==null) throw new RuntimeException("The list has only one element");
+		if(first==null) throw new NodeException("The list is empty");
+		if(first.next==null) throw new NodeException("The list has only one element");
 		
 		Node help = first;
 		
@@ -202,10 +209,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node reverseNodeOrder1(Node first) {
+	public Node reverseNodeOrder1(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		if(first.next==null) return first;
 		
 		Node newFirst = null;
@@ -225,10 +233,11 @@ public class MethodCollection {
 	 * First node of a singly linked list 
 	 * @return max
 	 * Max even element
+	 * @throws NodeException 
 	 */
-	public int returnMaxEvenElement(Node first) {
+	public int returnMaxEvenElement(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		int max = Integer.MIN_VALUE;
@@ -238,7 +247,7 @@ public class MethodCollection {
 			help=help.next;
 		}
 		
-		if(max==Integer.MIN_VALUE) throw new RuntimeException("The list has no even numbers");
+		if(max==Integer.MIN_VALUE) throw new NodeException("The list has no even numbers");
 		
 		return max;
 	}
@@ -248,10 +257,11 @@ public class MethodCollection {
 	 * First node of a singly linked list 
 	 * @return max
 	 * Max odd element
+	 * @throws NodeException 
 	 */
-	public int returnMaxOddElement(Node first) {
+	public int returnMaxOddElement(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		int max = Integer.MIN_VALUE;
@@ -261,7 +271,7 @@ public class MethodCollection {
 			help=help.next;
 		}
 		
-		if(max==Integer.MIN_VALUE) throw new RuntimeException("The list has no odd numbers");
+		if(max==Integer.MIN_VALUE) throw new NodeException("The list has no odd numbers");
 		
 		return max;
 	}
@@ -271,10 +281,11 @@ public class MethodCollection {
 	 * First node of a singly linked list 
 	 * @return min
 	 * Min even element
+	 * @throws NodeException 
 	 */
-	public int returnMinEvenElement(Node first) {
+	public int returnMinEvenElement(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		int min = Integer.MAX_VALUE;
@@ -284,7 +295,7 @@ public class MethodCollection {
 			help=help.next;
 		}
 		
-		if(min==Integer.MAX_VALUE) throw new RuntimeException("The list has no even numbers");
+		if(min==Integer.MAX_VALUE) throw new NodeException("The list has no even numbers");
 		
 		return min;
 	}
@@ -294,10 +305,11 @@ public class MethodCollection {
 	 * First node of a singly linked list 
 	 * @return min
 	 * Min odd element
+	 * @throws NodeException 
 	 */
-	public int returnMinOddElement(Node first) {
+	public int returnMinOddElement(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		int min = Integer.MAX_VALUE;
@@ -307,7 +319,7 @@ public class MethodCollection {
 			help=help.next;
 		}
 		
-		if(min==Integer.MAX_VALUE) throw new RuntimeException("The list has no odd numbers");
+		if(min==Integer.MAX_VALUE) throw new NodeException("The list has no odd numbers");
 		
 		return min;
 	}
@@ -317,9 +329,10 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node removeLastNode(Node first) {
-		if(first==null) throw new RuntimeException("The list is empty");
+	public Node removeLastNode(Node first) throws NodeException {
+		if(first==null) throw new NodeException("The list is empty");
 		if(first.next==null) return null;
 		
 		Node help = first;
@@ -335,10 +348,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node putAllNegativeNodesAtTheBeginning(Node first) {
+	public Node putAllNegativeNodesAtTheBeginning(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		if(first.next==null) return first;
 		
 		Node help = first;
@@ -358,10 +372,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node removeAllNegativeNodes(Node first) {
+	public Node removeAllNegativeNodes(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		
@@ -386,10 +401,11 @@ public class MethodCollection {
 	 * Number that should be removed from the singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node removeAllNodesEqualToX(Node first, int x) {
+	public Node removeAllNodesEqualToX(Node first, int x) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		
@@ -416,10 +432,11 @@ public class MethodCollection {
 	 * Number that should be removed from the singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node removeAllDuplicateNodesEqualToX(Node first, int x) {
+	public Node removeAllDuplicateNodesEqualToX(Node first, int x) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		boolean firstInstanceFound = false;
@@ -454,10 +471,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node removeNextAndPreviousNodeFromMax(Node first) {
+	public Node removeNextAndPreviousNodeFromMax(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		if(first.next==null) return first;
 		
 		Node help = first.next;
@@ -497,10 +515,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node removeDuplicatesFromASortedList(Node first) {
+	public Node removeDuplicatesFromASortedList(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		
@@ -520,10 +539,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node removeTheMiddleNode(Node first) {
+	public Node removeTheMiddleNode(Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");
+		if(first==null) throw new NodeException("The list is empty");
 		
 		Node help = first;
 		int count = 0;
@@ -533,7 +553,7 @@ public class MethodCollection {
 			help=help.next;
 		}
 	
-		if(count%2==0)  throw new RuntimeException("The list has even amount events");
+		if(count%2==0)  throw new NodeException("The list has even amount events");
 	
 		help = first;
 		for(int i=1;i<count/2;i++) help=help.next;
@@ -548,10 +568,11 @@ public class MethodCollection {
 	 * First node of a singly linked list
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node removeEvenNodesWithOddNeighbours (Node first) {
+	public Node removeEvenNodesWithOddNeighbours (Node first) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");		
+		if(first==null) throw new NodeException("The list is empty");		
 		
 		Node help = first.next;
 		
@@ -574,11 +595,12 @@ public class MethodCollection {
 	 * Number of nodes that should be removed
 	 * @return first
 	 * First node of a new re-arranged singly linked list	
+	 * @throws NodeException 
 	 */
-	public Node moveXPlacesRemoveYNodes (Node first, int x, int y) {
+	public Node moveXPlacesRemoveYNodes (Node first, int x, int y) throws NodeException {
 		
-		if(first==null) throw new RuntimeException("The list is empty");		
-		if(x<=0 && y<=0) throw new RuntimeException("Parameters are not in the right format");
+		if(first==null) throw new NodeException("The list is empty");		
+		if(x<=0 && y<=0) throw new NodeException("Parameters are not in the right format");
 		
 		Node help = first;
 		

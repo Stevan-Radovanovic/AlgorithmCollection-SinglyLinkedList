@@ -27,7 +27,7 @@ public class Helper {
 				Method currentMethod = methods[i];
 				System.out.println("You are testing the following method: " + currentMethod.getName());
 				
-				Node list1 = Helper.generateSinglyLinkedList(new int[] {});
+				Node list1 = Helper.generateSinglyLinkedList(new int[] {1});
 				System.out.println("Test 1:");
 				mc.showAllElements(list1);
 				if(!currentMethod.getReturnType().toString().equals("class Node")) 
@@ -61,7 +61,7 @@ public class Helper {
 				
 				Node list5 = Helper.generateSinglyLinkedList(new int[] {-7,-7,-7,-7,-7});
 				System.out.println("Test 5:");
-				mc.showAllElements(list1);
+				mc.showAllElements(list5);
 				if(!currentMethod.getReturnType().toString().equals("class Node")) 
 					System.out.println("Value returned: " + currentMethod.invoke(mc, list5));
 				else 
@@ -69,7 +69,7 @@ public class Helper {
 				
 				Node list6 = Helper.generateSinglyLinkedList(new int[] {99,8,-11,-14,1});
 				System.out.println("Test 6:");
-				mc.showAllElements(list1);
+				mc.showAllElements(list6);
 				if(!currentMethod.getReturnType().toString().equals("class Node")) 
 					System.out.println("Value returned: " + currentMethod.invoke(mc, list6));
 				else 
