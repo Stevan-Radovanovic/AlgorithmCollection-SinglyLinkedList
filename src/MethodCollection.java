@@ -1,7 +1,5 @@
-import javax.management.RuntimeErrorException;
-
 public class MethodCollection {
-
+	
 	/**
 	 * @param first 
 	 * First node of a singly linked list
@@ -9,7 +7,7 @@ public class MethodCollection {
 	 * Sum of all elements
 	 */
 	public int returnSumOfAllElements(Node first) {
-		
+	
 		if(first==null) throw new RuntimeException("The list is empty");
 		
 		Node help = first;
@@ -601,4 +599,6 @@ public class MethodCollection {
 		
 	}
 
+	
+	
 }
