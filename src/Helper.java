@@ -29,7 +29,6 @@ public class Helper {
 	}
 	
 	/**
-	 * Note: Currently not working with methods that take multiple parameters!
 	 * @param methodName
 	 * The name of the method that is supposed to be invoked
 	 * @throws IllegalAccessException
@@ -64,9 +63,9 @@ public class Helper {
 		testLists.add(Helper.generateSinglyLinkedList(new int[] {}));
 		testLists.add(Helper.generateSinglyLinkedList(new int[] {1,2}));
 		testLists.add(Helper.generateSinglyLinkedList(new int[] {5,4,3,2,1}));
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {1,2,2,2,3,3,3,4,4,4,5,5,5,6}));
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {-7,-7,-7,-7,-7}));
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {99,8,-11,-14,1}));
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {1,2,2,2,3,3,3,4,4,4,5,5,5}));
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {-3,-3,-3,-3,-3}));
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {5,3,-1,-4,1}));
 		testLists.add(Helper.generateSinglyLinkedList(new int[] {1,2,3,4,5}));
 		testLists.add(Helper.generateSinglyLinkedList(new int[] {2,4,-2,4,2,4,2,4,2,4}));	
 	}
@@ -74,13 +73,32 @@ public class Helper {
 	private static void testInstance (MethodCollection mc, Method currentMethod, int testNumber, Node list, int parameterLength) {
 		
 		try {
-			System.out.println("Test :" + testNumber);
+			System.out.println("**********************");
+			System.out.println("\nTest :" + testNumber);
+			
+			Random rGen = new Random();
+			int x = rGen.nextInt(5);
+			int y = rGen.nextInt(5);
+			
+			Object invoked = null;
+			
 			mc.showAllElements(list);
+			
+			if(parameterLength==1) {
+			    invoked = currentMethod.invoke(mc,list);
+			} else if (parameterLength==2) {
+				System.out.println("Parameter one: " + x);
+				invoked = currentMethod.invoke(mc,list,x);
+			} else if (parameterLength==3) {
+				System.out.println("Parameter one: " + x);
+				System.out.println("Parameter two: " + y);
+				invoked = currentMethod.invoke(mc,list,x,y);
+			}
+			
 			if(!currentMethod.getReturnType().toString().equals("class Node")) 
-				System.out.println("Value returned: " + currentMethod.invoke(mc, list));
+				System.out.println("Value returned: " + invoked);
 			else 
-				
-				mc.showAllElements((Node)currentMethod.invoke(mc,list));
+				mc.showAllElements((Node)invoked);
 		} catch (Exception e) {
 			System.out.println("Exception survived, moving on...");
 		}

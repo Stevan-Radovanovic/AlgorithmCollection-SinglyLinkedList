@@ -5,7 +5,7 @@ public class Test {
  	public static void main(String[] args) {
  		
 		try {
-			Helper.test("removeTheMiddleNode");
+			Helper.test("moveXPlacesRemoveYNodes");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
