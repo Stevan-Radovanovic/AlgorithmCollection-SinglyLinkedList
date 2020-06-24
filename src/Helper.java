@@ -3,6 +3,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Helper {
 
@@ -41,14 +42,7 @@ public class Helper {
 		Method[] methods = mc.getClass().getMethods();
 		
 		ArrayList<Node> testLists = new ArrayList<Node>();
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {}));
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {1,2}));
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {5,4,3,2,1}));
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {1,2,2,2,3,3,3,4,4,4,5,5,5,6}));
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {-7,-7,-7,-7,-7}));
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {99,8,-11,-14,1}));
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {1,2,3,4,5}));
-		testLists.add(Helper.generateSinglyLinkedList(new int[] {2,4,-2,4,2,4,2,4,2,4}));
+		Helper.generateTestLists(testLists);
 
 		for(int i=0;i<methods.length;i++) {
 			if(methods[i].getName().toString().equals(methodName)) {
@@ -66,6 +60,17 @@ public class Helper {
 		}
 	}
 	
+	private static void generateTestLists(ArrayList<Node> testLists) {
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {}));
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {1,2}));
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {5,4,3,2,1}));
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {1,2,2,2,3,3,3,4,4,4,5,5,5,6}));
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {-7,-7,-7,-7,-7}));
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {99,8,-11,-14,1}));
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {1,2,3,4,5}));
+		testLists.add(Helper.generateSinglyLinkedList(new int[] {2,4,-2,4,2,4,2,4,2,4}));	
+	}
+
 	private static void testInstance (MethodCollection mc, Method currentMethod, int testNumber, Node list, int parameterLength) {
 		
 		try {
@@ -74,6 +79,7 @@ public class Helper {
 			if(!currentMethod.getReturnType().toString().equals("class Node")) 
 				System.out.println("Value returned: " + currentMethod.invoke(mc, list));
 			else 
+				
 				mc.showAllElements((Node)currentMethod.invoke(mc,list));
 		} catch (Exception e) {
 			System.out.println("Exception survived, moving on...");
