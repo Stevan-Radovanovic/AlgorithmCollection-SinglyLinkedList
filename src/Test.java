@@ -5,9 +5,9 @@ public class Test {
  	public static void main(String[] args) {
  		
 		try {
-			Helper.test("removeAllDuplicateNodesEqualToX");
+			Helper.test("removeTheMiddleNode");
 		} catch (Exception e) {
-			System.out.println("Something went wrong.");
+			e.printStackTrace();
 		}
 	}
 }

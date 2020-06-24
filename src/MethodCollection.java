@@ -553,7 +553,7 @@ public class MethodCollection {
 			help=help.next;
 		}
 	
-		if(count%2==0)  throw new NodeException("The list has even amount events");
+		if(count%2==0)  throw new NodeException("The list has even amount of nodes");
 	
 		help = first;
 		for(int i=1;i<count/2;i++) help=help.next;
